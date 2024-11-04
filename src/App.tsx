@@ -5,9 +5,13 @@ import Input from "./components/Input";
 import Form from "./components/Form";
 
 function App() {
+  function handleSave(data: unknown) {
+    const extractedData = data as { name: string; age: string };
+    console.log(extractedData);
+  }
   return (
     <main>
-      <Form>
+      <Form onSave={handleSave}>
         <Input id="name" label="Your name" type="text" />
         <Input id="age" label="Your age" type="number" />
         <p>
